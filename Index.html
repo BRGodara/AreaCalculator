@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Area Calculator</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#Main{
+				height: 1250px;
+				width: 900px;
+				background: #FAFF89;
+				border: 2px solid black;
+				border-radius: 25px;
+				position: fixed;
+				top: 25px;
+				left: 38px;
+				display: block;
+				box-sizing: border-box;
+			}
+			#Credits{
+				height: 100px;
+				width: 900px;
+				background: #3EFF86;
+				border: 2px solid black;
+				border-radius: 25px;
+				position: fixed;
+				top: 1300px;
+				left: 38px;
+				display: block;
+				box-sizing: border-box;
+				color: #4B9500;
+				text-align: center;
+				font-size: 60px;
+				padding-top: 10px;
+			}
+			#Credits span{
+				color: #000000;
+			}
+			#Heading{
+				height: 100px;
+				width: 900px;
+				font-size: 70px;
+				color: #35A200;
+				text-align: center;
+				position: fixed;
+				top: 25px;
+				left: 38px;
+				display: block;
+				box-sizing: border-box;
+				border-bottom: 2px solid black;
+				border-radius: 15px;
+				padding-top: 15px;
+			}
+			#InputA{
+				height: 80px;
+				width: 500px;
+				position: fixed;
+				top: 250px;
+				left: 238px;
+				background: transparent;
+				color: #267859;
+				border: 2px solid black;
+				border-radius: 20px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+			}
+			#InputB{
+				height: 80px;
+				width: 500px;
+				position: fixed;
+				top: 360px;
+				left: 238px;
+				background: transparent;
+				color: #267859;
+				border: 2px solid black;
+				border-radius: 20px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+			}
+			#InputC{
+				height: 80px;
+				width: 500px;
+				position: fixed;
+				top: 470px;
+				left: 238px;
+				background: transparent;
+				color: #267859;
+				border: 2px solid black;
+				border-radius: 20px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+			}
+			#InputD{
+				height: 80px;
+				width: 500px;
+				position: fixed;
+				top: 580px;
+				left: 238px;
+				background: transparent;
+				color: #267859;
+				border: 2px solid black;
+				border-radius: 20px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+			}
+			#Calculate{
+				height: 90px;
+				width: 400px;
+				position: fixed;
+				top: 725px;
+				left: 288px;
+				background: #00FFBF;
+				color: #009670;
+				border: 2px solid black;
+				border-radius: 25px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+				box-sizing: border-box;
+			}
+			#Calculate:hover{
+				background: #008A67;
+				color: #00FFBE;
+			}
+			#Output{
+				height: 100px;
+				width: 400px;
+				position: fixed;
+				top: 950px;
+				left: 150px;
+				background: #49FF00;
+				color: #366C00;
+				border: 2px solid black;
+				border-radius: 20px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: none;
+				box-sizing: border-box;
+			}
+			#OutputBiga{
+				height: 100px;
+				width: 300px;
+				position: fixed;
+				top: 950px;
+				left: 525px;
+				background: #49FF00;
+				color: #366C00;
+				border: 2px solid black;
+				border-radius: 20px;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: none;
+				box-sizing: border-box;
+			}
+			#OpA{
+				height: 100px;
+				width: 350px;
+				position: fixed;
+				top: 957px;
+				left: 150px;
+				background: transparent;
+				color: #366C00;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+				box-sizing: border-box;
+			}
+			#OpB{
+				height: 100px;
+				width: 300px;
+				position: fixed;
+				top: 957px;
+				left: 525px;
+				background: transparent;
+				color: #366C00;
+				font-size: 55px;
+				padding-top: 10px;
+				text-align: center;
+				outline: none;
+				overflow: hidden;
+				display: block;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="Main">
+			<h1 id="Heading">
+				Area Calculator
+			</h1>
+			<div id="Calculator">
+				<input id="InputA" type="number" placeholder="Enter in feet"></input>
+				<input id="InputB" type="number" placeholder="Enter in feet"></input>
+				<input id="InputC" type="number" placeholder="Enter in feet"></input>
+				<input id="InputD" type="number" placeholder="Enter in feet"></input>
+				<div id="Calculate" onclick="Calculate()">Calculate</div>
+				<div id="Output"><p id="OpA">9999.9 Feet</p></div>
+				<div id="OutputBiga"><p id="OpB">99.9 Biga<p></div>
+			</div>
+			<div id="Credits">
+				<span>Creator :</span> Bishnaram Godara
+			</div>
+		</div>
+		<script>
+			var InputA = document.getElementById("InputA");
+			var InputB = document.getElementById("InputB");
+			var InputC = document.getElementById("InputC");
+			var InputD = document.getElementById("InputD");
+			var OutputA = document.getElementById("OpA");
+			var OutputB = document.getElementById("OpB");
+			
+			function Calculate(){
+				document.getElementById("Output").style.display = "block";
+				document.getElementById("OutputBiga").style.display = "block";
+				
+				var Total_Area = 0;
+				var Total_Biga = 0;
+				
+				var x = Number(InputA.value) + Number(InputC.value);
+				var y = Number(InputB.value) + Number(InputD.value);
+				
+				x = x / 2;
+				y = y / 2;
+				
+				var z = x * y;
+				
+				Total_Area = z;
+				Total_Biga = z / 27225;
+				
+				OutputA.innerHTML = Total_Area + " Feet";
+				OutputB.innerHTML = Total_Biga + " Biga";
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
