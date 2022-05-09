@@ -257,6 +257,10 @@
 				Total_Area = z;
 				Total_Biga = z / 27225;
 				
+                                Total_Area = Total_Area.toString();
+				Total_Area = Total_Area.substr(0, 7);
+				Total_Area = Number(Total_Area);
+
 				OutputA.innerHTML = Total_Area.toFixed(0) + " Feet";
 				OutputB.innerHTML = Total_Biga.toFixed(2) + " Biga";
 			}
